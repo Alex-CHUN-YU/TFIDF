@@ -12,7 +12,7 @@ import tw.cheyingwu.ckip.Term;
  * 
  * CKIP Part of Speech.
  *
- * @version 1.0 2017/5/24
+ * @version 1.0 2017/05/24
  * @author NCKU WMMKS LAB
  *
  */
