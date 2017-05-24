@@ -9,6 +9,7 @@ import tw.cheyingwu.ckip.CKIP;
 import tw.cheyingwu.ckip.Term;
 
 /**
+ * 
  * CKIP Part of Speech.
  *
  * @version 1.0 2017/5/24
@@ -68,9 +69,7 @@ public class POS {
 
     /**
      * CKIP connect.
-     *
      * @param sentence Segment
-     *
      * @return object
      */
     public ArrayList<Tuple<String, String>> seg(final String sentence) {
@@ -87,7 +86,7 @@ public class POS {
     }
 
     /**
-     * Log segmentation result.
+     * Log Segmentation Result.
      * @param wsResult segmentation result
      */
     private void logSegments(final ArrayList<Tuple<String, String>> wsResult) {
@@ -101,8 +100,9 @@ public class POS {
     }
 
     /**
+     * 
      * Tuple Format.
-     *
+     * 
      * @param <X> declare X
      * @param <Y> declare Y
      *
