@@ -11,15 +11,22 @@ import tw.cheyingwu.ckip.Term;
 /**
  * CKIP Part of Speech.
  *
- * @version 1.0 2017年4月27日
+ * @version 1.0 2017/5/24
  * @author NCKU WMMKS LAB
  *
  */
 public class POS {
+	
     /**
      * Slf4j logger instance.
      */
     private final Logger logger = LoggerFactory.getLogger(POS.class);
+    
+    /**
+     * CKIP User connection.
+     */
+    private CKIP connection;
+    
     /**
      * CKIP serverIP.
      */
@@ -39,11 +46,6 @@ public class POS {
      * CKIP User Password.
      */
     private static String password = "Duke9876!"; // "6cd25e45";
-
-    /**
-     * CKIP User connection.
-     */
-    private CKIP connection;
 
     /**
      * CKIP connect.
@@ -110,10 +112,10 @@ public class POS {
         /**
          * X segmentWord.
          */
-        private X word;
+        private X getWord;
 
         /**
-         * Y segmentWord.
+         * Y segmentPos.
          */
         private Y getPos;
 
@@ -122,7 +124,7 @@ public class POS {
          * @return word
          */
         public X getWord() {
-            return word;
+            return getWord;
         }
 
         /**
@@ -139,7 +141,7 @@ public class POS {
          * @param y is Y declare
          */
         public Tuple(final X x, final Y y) {
-            this.word = x;
+            this.getWord = x;
             this.getPos = y;
         }
     }

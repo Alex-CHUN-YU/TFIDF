@@ -11,31 +11,31 @@ import tfidf.POS.Tuple;
 
 /**
  *
- * TFIDF TEST: 由於TestFile.txt裡面總共73句(每一句視為doc計算IDF)(整個文件視為一個doc計算TF).
+ * TFIDF TEST: TestFile.txt inside a total of 73 sentences(Each sentence as a document(doc) calculation IDF)(the entire 73 sentences as a documents calculation TF).
  *
- * @version 1.0 2017年5月18日
+ * @version 1.0 2017/5/24
  * @author ALEX-CHUN-YU
  *
  */
 public class TFIDF {
 
     /**
-     * CKIP斷詞.
+     * CKIP POS.
      */
     private static ArrayList<Tuple<String, String>> pos = new ArrayList<Tuple<String, String>>();
-
+    
     /**
-     * Corpus(這個Corpus有73份文件).
-     */
-    private static ArrayList<ArrayList<String>> documentList = new ArrayList<ArrayList<String>>();
-
-    /**
-     * Doc Of Corpus.
+     * Each Sentence Result Of POS Word In Corpus.
      */
     private static ArrayList<String> doc = new ArrayList<String>();
 
     /**
-     * Test Document(整個文件視為一個doc計算TF，也就是這個Corpus只有一個文件).
+     * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 73 Documents.
+     */
+    private static ArrayList<ArrayList<String>> documentList = new ArrayList<ArrayList<String>>();
+    
+    /**
+     * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 1 Documents.
      */
     private static ArrayList<String> demoDocument = new ArrayList<String>();
 
@@ -84,7 +84,7 @@ public class TFIDF {
     }
 
     /**
-     *
+     * Main Function Test TF And IDF
      * @param args argument
      * @throws IOException IOException
      */
@@ -92,31 +92,32 @@ public class TFIDF {
         POS ws = new POS();
         File file = new File(".");
         String path = file.getCanonicalPath();
-        // Set File Name
+        // Set Read File Initial
         String fileSeparator = System.getProperty("file.separator");
         String fileName = path + fileSeparator + "src//main//resources//TestFile.txt";
         InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
         BufferedReader read = new BufferedReader(isr);
         String str;
+        // Read File
         while ((str = read.readLine()) != null) {
-            //將每句話當成Doc
+            //Each Sentence As A Doc
             doc = new ArrayList<String>();
-            //斷詞後結果
+            //Result Of POS
             pos = ws.seg(str);
-            //將Doc斷詞後的結果加上去
+            //Each Sentence Result Of POS
             for (int i = 0; i < pos.size(); i++) {
                 doc.add(pos.get(i).getWord());
             }
-            //將全部的doc視為一個corpus
+            //Calculate IDF Corpus
             documentList.add(doc);
-            //將TestFile.txt視為一個doc，主要計算TF用的
+            //Calculate TF Corpus
             demoDocument.addAll(doc);
         }
         TFIDF calculator = new TFIDF();
-        System.out.println("測試的Term:如何");
-        System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, "如何"));
-        System.out.println("TF = " + calculator.tf(demoDocument, "如何"));
-        System.out.println("IDF = " + calculator.idf(documentList, "如何"));
+        System.out.println("�p��");
+        System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, "�p��"));
+        System.out.println("TF = " + calculator.tf(demoDocument, "�p��"));
+        System.out.println("IDF = " + calculator.idf(documentList, "�p��"));
         // Close Reader
         isr.close();
         read.close();
