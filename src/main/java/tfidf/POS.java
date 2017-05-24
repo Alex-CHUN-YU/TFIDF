@@ -16,17 +16,17 @@ import tw.cheyingwu.ckip.Term;
  *
  */
 public class POS {
-	
+
     /**
      * Slf4j logger instance.
      */
     private final Logger logger = LoggerFactory.getLogger(POS.class);
-    
+
     /**
      * CKIP User connection.
      */
     private CKIP connection;
-    
+
     /**
      * CKIP serverIP.
      */

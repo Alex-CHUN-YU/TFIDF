@@ -11,7 +11,8 @@ import tfidf.POS.Tuple;
 
 /**
  *
- * TFIDF TEST: TestFile.txt inside a total of 73 sentences(Each sentence as a document(doc) calculation IDF)(the entire 73 sentences as a documents calculation TF).
+ * TFIDF TEST: TestFile.txt inside a total of 73 sentences(Each sentence as a document(doc)
+ * calculation IDF)(the entire 73 sentences as a documents calculation TF).
  *
  * @version 1.0 2017/5/24
  * @author ALEX-CHUN-YU
@@ -23,17 +24,18 @@ public class TFIDF {
      * CKIP POS.
      */
     private static ArrayList<Tuple<String, String>> pos = new ArrayList<Tuple<String, String>>();
-    
+
     /**
      * Each Sentence Result Of POS Word In Corpus.
      */
     private static ArrayList<String> doc = new ArrayList<String>();
 
     /**
-     * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 73 Documents.
+     * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 73
+     * Documents.
      */
     private static ArrayList<ArrayList<String>> documentList = new ArrayList<ArrayList<String>>();
-    
+
     /**
      * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 1 Documents.
      */
@@ -84,7 +86,7 @@ public class TFIDF {
     }
 
     /**
-     * Main Function Test TF And IDF
+     * Main Function Test TF And IDF.
      * @param args argument
      * @throws IOException IOException
      */
@@ -114,10 +116,11 @@ public class TFIDF {
             demoDocument.addAll(doc);
         }
         TFIDF calculator = new TFIDF();
-        System.out.println("¦p¦ó");
-        System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, "¦p¦ó"));
-        System.out.println("TF = " + calculator.tf(demoDocument, "¦p¦ó"));
-        System.out.println("IDF = " + calculator.idf(documentList, "¦p¦ó"));
+        String testString = "å¦‚ä½•";
+        System.out.println(testString + ":");
+        System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, testString));
+        System.out.println("TF = " + calculator.tf(demoDocument, testString));
+        System.out.println("IDF = " + calculator.idf(documentList, testString));
         // Close Reader
         isr.close();
         read.close();
