@@ -10,7 +10,7 @@ import tw.cheyingwu.ckip.Term;
 
 /**
  * 
- * CKIP Part of Speech.
+ * CKIP Part Of Speech.
  *
  * @version 1.0 2017/05/24
  * @author NCKU WMMKS LAB
@@ -19,27 +19,27 @@ import tw.cheyingwu.ckip.Term;
 public class POS {
 
     /**
-     * Slf4j logger instance.
+     * Slf4j Logger Instance.
      */
     private final Logger logger = LoggerFactory.getLogger(POS.class);
 
     /**
-     * CKIP User connection.
+     * CKIP User Connection.
      */
     private CKIP connection;
 
     /**
-     * CKIP serverIP.
+     * CKIP ServerIP.
      */
     private static String serverIP = "140.109.19.104";
 
     /**
-     * CKIP serverPort.
+     * CKIP ServerPort.
      */
     private static String serverPort = "1501";
 
     /**
-     * CKIP userName.
+     * CKIP UserName.
      */
     private static String userName = "duke@mt.com.tw"; // "kenmonmouth";
 
@@ -49,14 +49,14 @@ public class POS {
     private static String password = "Duke9876!"; // "6cd25e45";
 
     /**
-     * CKIP connect.
+     * CKIP Connect.
      */
     public POS() {
         connect(serverIP, Integer.parseInt(serverPort), userName, password);
     }
 
     /**
-     * CKIP connect.
+     * CKIP Connect.
      * @param serverIPTemp CKIP serverIP
      * @param serverPortTemp CKIP serverPort
      * @param userNameTemp CKIP userName
@@ -68,7 +68,7 @@ public class POS {
     }
 
     /**
-     * CKIP connect.
+     * CKIP Connect.
      * @param sentence Segment
      * @return object
      */
@@ -110,17 +110,17 @@ public class POS {
     public static class Tuple<X, Y> {
 
         /**
-         * X segmentWord.
+         * X SegmentWord.
          */
         private X getWord;
 
         /**
-         * Y segmentPos.
+         * Y SegmentPos.
          */
         private Y getPos;
 
         /**
-         * get x segment.
+         * Get x Segment.
          * @return word
          */
         public X getWord() {
@@ -128,7 +128,7 @@ public class POS {
         }
 
         /**
-         * get y segment.
+         * Get y Segment.
          * @return POS
          */
         public Y getPos() {
@@ -136,7 +136,7 @@ public class POS {
         }
 
         /**
-         * segmentPOS.
+         * SegmentPOS.
          * @param x is X declare
          * @param y is Y declare
          */
