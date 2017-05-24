@@ -86,12 +86,12 @@ public class TFIDF {
     }
 
     /**
-     * 
+     *
      * Main Function Test TF And IDF.
-     * 
+     *
      * @param args argument
      * @throws IOException IOException
-     * 
+     *
      */
     public static void main(final String[] args) throws IOException {
         POS ws = new POS();

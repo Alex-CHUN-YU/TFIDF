@@ -9,7 +9,7 @@ import tw.cheyingwu.ckip.CKIP;
 import tw.cheyingwu.ckip.Term;
 
 /**
- * 
+ *
  * CKIP Part Of Speech.
  *
  * @version 1.0 2017/05/24
@@ -100,9 +100,9 @@ public class POS {
     }
 
     /**
-     * 
+     *
      * Tuple Format.
-     * 
+     *
      * @param <X> declare X
      * @param <Y> declare Y
      *
