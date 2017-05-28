@@ -7,6 +7,7 @@ Input:</br>
 TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試</br>
 
 Output:</br>
+如何:</br>
 TF-IDF = 0.03895987786198207</br>
 TF = 0.05299860529986053</br>
 IDF = 0.7351113796589775</br>
