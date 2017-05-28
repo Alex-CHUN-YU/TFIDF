@@ -84,17 +84,13 @@ public class TFIDF {
             final String term) {
         return tf(tfidfdoc, term) * idf(corpus, term);
     }
-
+    
     /**
-     *
-     * Main Function Test TF And IDF.
-     *
-     * @param args argument
-     * @throws IOException IOException
-     *
+     * Train Data
+     * @throws IOException 
      */
-    public static void main(final String[] args) throws IOException {
-        POS ws = new POS();
+    public TFIDF() throws IOException {
+    	POS ws = new POS();
         File file = new File(".");
         String path = file.getCanonicalPath();
         // Set Read File Initial
@@ -118,14 +114,27 @@ public class TFIDF {
             //Calculate TF Corpus
             demoDocument.addAll(doc);
         }
+        // Close Reader
+        isr.close();
+        read.close();
+    }
+    
+    /**
+     *
+     * Main Function Test TF And IDF.
+     *
+     * @param args argument
+     * @throws IOException IOException
+     *
+     */
+    public static void main(final String[] args) throws IOException {
+ 
         TFIDF calculator = new TFIDF();
         String testString = "如何";
         System.out.println(testString + ":");
         System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, testString));
         System.out.println("TF = " + calculator.tf(demoDocument, testString));
         System.out.println("IDF = " + calculator.idf(documentList, testString));
-        // Close Reader
-        isr.close();
-        read.close();
+ 
     }
 }
