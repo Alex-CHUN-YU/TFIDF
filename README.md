@@ -4,7 +4,7 @@ WiKi可看到TF-IDF原理(https://github.com/Alex-CHUN-YU/TF-IDF/wiki)
 
 ## 使用方式
 Input:</br>
-* TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試</br>
+1. TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試</br>
 
 Output:</br>
 如何:</br>
