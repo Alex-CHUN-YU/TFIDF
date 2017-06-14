@@ -5,6 +5,7 @@ WiKi可看到TF-IDF原理(https://github.com/Alex-CHUN-YU/TF-IDF/wiki)
 * 計算term之重要程度(權重)
 * 去掉停用詞(不重要的term)
 * 提取文章摘要(topic...)
+* 表達文件的向量與BOW很像
 
 ## 使用方式
 Input:</br>
