@@ -41,12 +41,12 @@ public class POS {
     /**
      * CKIP UserName.
      */
-    private static String userName = "duke@mt.com.tw"; // "kenmonmouth";
+    private static String userName = "ncku4alex@gmail.com"; // "kenmonmouth";
 
     /**
      * CKIP User Password.
      */
-    private static String password = "Duke9876!"; // "6cd25e45";
+    private static String password = "ncku4alex"; // "6cd25e45";
 
     /**
      * CKIP Connect.

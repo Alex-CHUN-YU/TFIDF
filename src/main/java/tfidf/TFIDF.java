@@ -107,8 +107,10 @@ public class TFIDF {
             pos = ws.seg(str);
             //Each Sentence Result Of POS
             for (int i = 0; i < pos.size(); i++) {
+                System.out.print("[" + pos.get(i).getWord() + pos.get(i).getPos() + "] ");
                 doc.add(pos.get(i).getWord());
             }
+            System.out.println();
             //Calculate IDF Corpus
             documentList.add(doc);
             //Calculate TF Corpus
