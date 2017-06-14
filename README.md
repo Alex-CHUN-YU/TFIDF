@@ -5,8 +5,7 @@ WiKi可看到TF-IDF原理(https://github.com/Alex-CHUN-YU/TF-IDF/wiki)
 * 計算term之重要程度(權重)
 * 去掉停用詞(不重要的term)
 * 提取文章摘要(topic...)
-* 表達文件的向量與BOW很像
-
+* 表達文件的向量是Bag of Word的進階板(1.不會被不重要的term主導 2.不會完全只取決文件長度而導致term高太多分數)
 ## 使用方式
 Input:</br>
 1. TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試</br>
