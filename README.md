@@ -8,14 +8,16 @@ WiKi可看到TF-IDF原理(https://github.com/Alex-CHUN-YU/TF-IDF/wiki)
 * 表達文件的向量是Bag of Word的進階板(1.不會被不重要的term主導 2.不會完全只取決文件長度而導致term高太多分數)
 ## 使用方式
 Input:</br>
-1. TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試</br>
-
+```
+TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試
+```
 Output:</br>
 如何:</br>
-TF-IDF = 0.03895987786198207</br>
-TF = 0.05299860529986053</br>
-IDF = 0.7351113796589775</br>
-
+```
+TF-IDF = 0.03895987786198207
+TF = 0.05299860529986053
+IDF = 0.7351113796589775
+```
 ## 開發環境
 Maven Project</br>
 Eclipse Version: Neon.2 Release (4.6.2)</br>
