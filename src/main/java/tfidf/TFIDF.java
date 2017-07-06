@@ -40,6 +40,42 @@ public class TFIDF {
      * Corpus(Inside a total of 73 sentences), In Other Words, Corpus Inside A Total Of 1 Documents.
      */
     private static ArrayList<String> demoDocument = new ArrayList<String>();
+    
+     /**
+     * Train Data.
+     * @throws IOException exception
+     */
+    public TFIDF() throws IOException {
+        POS ws = new POS();
+        File file = new File(".");
+        String path = file.getCanonicalPath();
+        // Set Read File Initial
+        String fileSeparator = System.getProperty("file.separator");
+        String fileName = path + fileSeparator + "src//main//resources//TestFile.txt";
+        InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
+        BufferedReader read = new BufferedReader(isr);
+        String str;
+        // Read File
+        while ((str = read.readLine()) != null) {
+            //Each Sentence As A Doc
+            doc = new ArrayList<String>();
+            //Result Of POS
+            pos = ws.seg(str);
+            //Each Sentence Result Of POS
+            for (int i = 0; i < pos.size(); i++) {
+                System.out.print("[" + pos.get(i).getWord() + pos.get(i).getPos() + "] ");
+                doc.add(pos.get(i).getWord());
+            }
+            System.out.println();
+            //Calculate IDF Corpus
+            documentList.add(doc);
+            //Calculate TF Corpus
+            demoDocument.addAll(doc);
+        }
+        // Close Reader
+        isr.close();
+        read.close();
+    }
 
     /**
      * @param tfDemoDocument  list of strings
@@ -83,42 +119,6 @@ public class TFIDF {
     public double tfIdf(final ArrayList<String> tfidfdoc, final ArrayList<ArrayList<String>> corpus,
             final String term) {
         return tf(tfidfdoc, term) * idf(corpus, term);
-    }
-
-    /**
-     * Train Data.
-     * @throws IOException exception
-     */
-    public TFIDF() throws IOException {
-        POS ws = new POS();
-        File file = new File(".");
-        String path = file.getCanonicalPath();
-        // Set Read File Initial
-        String fileSeparator = System.getProperty("file.separator");
-        String fileName = path + fileSeparator + "src//main//resources//TestFile.txt";
-        InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
-        BufferedReader read = new BufferedReader(isr);
-        String str;
-        // Read File
-        while ((str = read.readLine()) != null) {
-            //Each Sentence As A Doc
-            doc = new ArrayList<String>();
-            //Result Of POS
-            pos = ws.seg(str);
-            //Each Sentence Result Of POS
-            for (int i = 0; i < pos.size(); i++) {
-                System.out.print("[" + pos.get(i).getWord() + pos.get(i).getPos() + "] ");
-                doc.add(pos.get(i).getWord());
-            }
-            System.out.println();
-            //Calculate IDF Corpus
-            documentList.add(doc);
-            //Calculate TF Corpus
-            demoDocument.addAll(doc);
-        }
-        // Close Reader
-        isr.close();
-        read.close();
     }
 
     /**
