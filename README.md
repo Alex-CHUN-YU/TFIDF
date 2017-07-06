@@ -1,6 +1,5 @@
 # TF-IDF
 TF-IDF是資訊檢索(Information Retrieval)與文字挖掘(Text Mining)的常用加權技術，這裡透過/src/main/resources/TestFile.txt 台哥大73個句子(每句話CKIP斷詞後的結果為term)，來進行計算TF-IDF之運用。</br>
-WiKi可看到TF-IDF原理(https://github.com/Alex-CHUN-YU/TF-IDF/wiki)
 * 計算term之重要程度(權重)
 * 去掉停用詞(不重要的term)
 * 提取文章摘要(topic...)
