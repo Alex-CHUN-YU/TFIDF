@@ -16,6 +16,7 @@ public class Main {
      *
      */
     public static void main(final String[] args) throws IOException {
+        
         System.out.println("由於受限於CKIP斷詞速率，請耐心等待...(可將其斷詞結果加入辭典中進行讀取)\n");
         TFIDF calculator = new TFIDF();
         String testString = "如何";
