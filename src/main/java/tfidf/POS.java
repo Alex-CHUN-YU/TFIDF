@@ -84,17 +84,11 @@ public class POS {
      *
      */
     public static class Tuple<X, Y> {
-
-        /**
-         * X SegmentWord.
-         */
+        //X SegmentWord. 
         private X getWord;
-
-        /**
-         * Y SegmentPos.
-         */
+        //Y SegmentPos.
         private Y getPos;
-
+        
         /**
          * Get x Segment.
          * @return word
