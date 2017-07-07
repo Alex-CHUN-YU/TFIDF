@@ -63,10 +63,10 @@ public class TFIDF {
             pos = ws.seg(str);
             //Each Sentence Result Of POS
             for (int i = 0; i < pos.size(); i++) {
-                System.out.print("[" + pos.get(i).getWord() + pos.get(i).getPos() + "] ");
+                //System.out.print("[" + pos.get(i).getWord() + pos.get(i).getPos() + "] ");
                 doc.add(pos.get(i).getWord());
             }
-            System.out.println();
+            //System.out.println();
             //Calculate IDF Corpus
             documentList.add(doc);
             //Calculate TF Corpus
@@ -78,65 +78,45 @@ public class TFIDF {
     }
 
     /**
-     * @param tfDemoDocument  list of strings
+     * TF
      * @param term String represents a term
      * @return term frequency of term in document
      */
-    public double tf(final ArrayList<String> tfDemoDocument, final String term) {
+    public double tf(final String term) {
         double result = 0;
-        for (String word : tfDemoDocument) {
+        for (String word : demoDocument) {
             if (term.equalsIgnoreCase(word)) {
                 result++;
             }
         }
-        return result / tfDemoDocument.size();
+        return result / demoDocument.size();
     }
 
     /**
-     * @param corpus list of list of strings represents the DataSet
+     * IDF
      * @param term String represents a term
      * @return the inverse term frequency of term in documents
      */
-    public double idf(final ArrayList<ArrayList<String>> corpus, final String term) {
+    public double idf(final String term) {
         double count = 0;
-        for (ArrayList<String> idfdoc : corpus) {
-            for (String word : idfdoc) {
+        for (ArrayList<String> idfDoc : documentList) {
+            for (String word : idfDoc) {
                 if (term.equalsIgnoreCase(word)) {
                     count++;
                     break;
                 }
             }
         }
-        return Math.log(corpus.size() / count);
+        return Math.log(documentList.size() / count);
     }
 
     /**
-     * @param tfidfdoc  a text document
-     * @param corpus corpus
+     * TF-IDF
      * @param term term
      * @return the TF-IDF of term
      */
-    public double tfIdf(final ArrayList<String> tfidfdoc, final ArrayList<ArrayList<String>> corpus,
-            final String term) {
-        return tf(tfidfdoc, term) * idf(corpus, term);
+    public double tfIdf(final String term) {
+        return tf(term) * idf(term);
     }
 
-    /**
-     *
-     * Main Function Test TF And IDF.
-     *
-     * @param args argument
-     * @throws IOException IOException
-     *
-     */
-    public static void main(final String[] args) throws IOException {
-
-        TFIDF calculator = new TFIDF();
-        String testString = "如何";
-        System.out.println(testString + ":");
-        System.out.println("TF-IDF = " + calculator.tfIdf(demoDocument, documentList, testString));
-        System.out.println("TF = " + calculator.tf(demoDocument, testString));
-        System.out.println("IDF = " + calculator.idf(documentList, testString));
-
-    }
 }

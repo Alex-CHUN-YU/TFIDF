@@ -2,9 +2,6 @@ package tfidf;
 
 import java.util.ArrayList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import tw.cheyingwu.ckip.CKIP;
 import tw.cheyingwu.ckip.Term;
 
@@ -17,11 +14,6 @@ import tw.cheyingwu.ckip.Term;
  *
  */
 public class POS {
-
-    /**
-     * Slf4j Logger Instance.
-     */
-    private final Logger logger = LoggerFactory.getLogger(POS.class);
 
     /**
      * CKIP User Connection.
@@ -73,7 +65,6 @@ public class POS {
      * @return object
      */
     public ArrayList<Tuple<String, String>> seg(final String sentence) {
-        logger.info("sentence: " + sentence);
         ArrayList<Tuple<String, String>> wsResult = new ArrayList<Tuple<String, String>>();
         connection.setRawText(sentence);
         connection.send();
@@ -81,22 +72,7 @@ public class POS {
             Tuple<String, String> pair = new Tuple<String, String>(t.getTerm(), t.getTag());
             wsResult.add(pair);
         }
-        logSegments(wsResult);
         return wsResult;
-    }
-
-    /**
-     * Log Segmentation Result.
-     * @param wsResult segmentation result
-     */
-    private void logSegments(final ArrayList<Tuple<String, String>> wsResult) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("segment: [");
-        wsResult.stream().forEach(s -> sb.append(s.getWord() + ","));
-        sb.append("]=[");
-        wsResult.stream().forEach(s -> sb.append(s.getPos() + ","));
-        sb.append("]");
-        logger.info(sb.toString());
     }
 
     /**
@@ -145,4 +121,5 @@ public class POS {
             this.getPos = y;
         }
     }
+
 }

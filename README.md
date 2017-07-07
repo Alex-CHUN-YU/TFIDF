@@ -1,4 +1,5 @@
 # TF-IDF
+![demo](https://github.com/Alex-CHUN-YU/TFIDF/blob/master/image/demo.png)</br></br></br>
 TF-IDF是資訊檢索(Information Retrieval)與文字挖掘(Text Mining)的常用加權技術，這裡透過/src/main/resources/TestFile.txt 台哥大73個句子(每句話CKIP斷詞後的結果為term)，來進行計算TF-IDF之運用。</br>
 * 計算term之重要程度(權重)
 * 去掉停用詞(不重要的term)
@@ -8,11 +9,11 @@ TF-IDF是資訊檢索(Information Retrieval)與文字挖掘(Text Mining)的常�
 ## 使用方式
 Input:</br>
 ```
-1.TFIDF.java 裡的 Main Function 中的 testString 變數(Ex:如何)來進行測試
+1.執行Main.java可更改testString的字串(EX:如何)
 ```
 Output:</br>
 ```
-如何:
+測試的Term:如何
 TF-IDF = 0.03895987786198207
 TF = 0.05299860529986053
 IDF = 0.7351113796589775
