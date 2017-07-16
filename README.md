@@ -5,7 +5,7 @@ TF-IDF是資訊檢索(Information Retrieval)與文字挖掘(Text Mining)的常�
 * 去掉停用詞(不重要的term)
 * 提取文章摘要(topic...)
 * 表達文件的向量是Bag of Word的進階板(1.不會被不重要的term主導 2.不會完全只取決文件長度而導致term高太多分數)
-
+123
 ## 使用方式
 Input:</br>
 ```
